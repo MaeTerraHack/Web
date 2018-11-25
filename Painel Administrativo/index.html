@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>Mãe Terra - Painel Administrativo</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <link href="css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+    <link href="css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+    <link href="css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="css/helper.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+    <!--[if lt IE 9]>
+        <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="fix-header fix-sidebar">
+
+    <!-- Preloader - style you can find in spinners.css -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <span><img src="images/maeterralogo.png" style="width: 80px !important; margin: 5px;" alt="homepage" class="dark-logo" /></span>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav mr-auto my-lg-0">
+                        <!-- Search -->
+                        <li class="nav-item hidden-sm-down search-box">
+                            <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Busca"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-devider"></li>
+                        <li class="nav-label">Home</li>
+                        <li>
+                            <a href="index.html" aria-expanded="false">
+                                <i class="fa fa-tachometer"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-label">Sistema</li>
+                        <li>
+                            <a href="#" aria-expanded="false">
+                                <i class="fa fa-cog"></i><span class="hide-menu">Configurações</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="page-login.html" aria-expanded="false">
+                                <i class="fa fa-sign-out"></i><span class="hide-menu">Sair</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Painel Administrativo - Mês Atual</h3>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Painel Administrativo</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><img src="images/users.png" style="width: 50px;" /></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2 id="txt_co2">366</h2>
+                                    <p class="m-b-0">Pessoas Impactadas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30" style="height: 140px;">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-info f-s-40"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2 id="txt_km">456</h2>
+                                    <p class="m-b-0">Termos Pesquisados</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-flag f-s-40" style="color: red;"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2 id="txt_ocorrencias">5</h2>
+                                    <p class="m-b-0">Buscas Sem Ocorrências</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30" style="height: 140px;">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-user f-s-40"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2 id="txt_usuarios">335</h2>
+                                    <p class="m-b-0">Novos Usuários</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row bg-white m-l-0 m-r-0 box-shadow ">
+
+                    <!-- column -->
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Top Termos Buscados</h4>
+                                <div id="chart-bairros"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- column -->
+                    <!-- column -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body browser">
+                                <p class="f-w-600">Tribos <span class="pull-right">55%</span></p>
+                                <div class="progress ">
+                                    <div role="progressbar" style="width: 55%; height:8px; background: rgb(11, 98, 164) !important;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
+                                </div>
+
+                                <p class="m-t-30 f-w-600">Remix<span class="pull-right">27%</span></p>
+                                <div class="progress">
+                                    <div role="progressbar" style="width: 27%; height:8px; background: rgb(237, 194, 64) !important;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
+                                </div>
+
+                                <p class="m-t-30 f-w-600">Porto Alegre<span class="pull-right">15%</span></p>
+                                <div class="progress">
+                                    <div role="progressbar" style="width: 15%; height:8px; background: rgb(77, 167, 77) !important;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
+                                </div>
+
+                                <p class="m-t-30 f-w-600">Sabugito<span class="pull-right">2%</span></p>
+                                <div class="progress">
+                                    <div role="progressbar" style="width: 2%; height:8px; background: rgb(122, 146, 163) !important;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
+                                </div>
+
+                                <p class="m-t-30 f-w-600">Outros<span class="pull-right">1%</span></p>
+                                <div class="progress m-b-30">
+                                    <div role="progressbar" style="width: 1%; height:30px; background: rgb(175, 216, 248); !important;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- column -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Estados</h4>
+                                <div id="donut_chart_1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="margin-top: 0px !important;">Radar Cidades</h4>
+                                <canvas id="radarChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Top Termos Sem Resultados </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Termo</th>
+                                                <th>Cidade</th>
+                                                <th>UF</th>
+                                                <th>Quantidade</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+												<td>Tomate Orgânico</td>
+                                                <td><span>São Paulo</span></td>
+                                                <td><span>SP</span></td>
+                                                <td><span class="badge badge-success" style="background-color: red !important;">75 Ocorrências</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Amendoim</td>
+                                                <td><span>São Paulo</span></td>
+                                                <td><span>SP</span></td>
+                                                <td><span class="badge badge-success" style="background-color: red !important;">55 Ocorrências</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Suco de Laranja Orgânico</td>
+                                                <td><span>São Gonçalo do Sapucaí</span></td>
+                                                <td><span>MG</span></td>
+                                                <td><span class="badge badge-success" style="background-color: red !important;">37 Ocorrências</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quinoa Orgânica</td>
+                                                <td><span>Cuiabá</span></td>
+                                                <td><span>MT</span></td>
+                                                <td><span class="badge badge-success" style="background-color: red !important;">29 Ocorrências</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ritto</td>
+                                                <td><span>Porto Alegre</span></td>
+                                                <td><span>RS</span></td>
+                                                <td><span class="badge badge-success" style="background-color: red !important;">11 Ocorrências</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End PAge Content -->
+
+            </div>
+            <!-- End Container fluid  -->
+            <!-- footer -->
+            <footer class="footer">© 2018 Îandé - Powered by Mãe Terra.</footer>
+            <!-- End footer -->
+
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="js/lib/bootstrap/js/popper.min.js"></script>
+    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+
+    <!-- Amchart -->
+    <script src="js/lib/morris-chart/raphael-min.js"></script>
+    <script src="js/lib/morris-chart/morris.js"></script>
+    <script src="js/lib/morris-chart/dashboard1-init.js"></script>
+
+    <!-- Chart JS -->
+    <script src="js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="js/lib/chart-js/chartjs-init.js"></script>
+
+    <!-- scripit init-->
+    <script src="js/scripts.js"></script>
+
+    <script type="text/javascript">
+        var txtCo2 = 366;
+        var txtKm = 456;
+        var txtOcorrencias = 5;
+        var txtUsuarios = 335;
+
+        window.setInterval(function ()
+        {
+            txtCo2 = txtCo2 + Math.round(Math.random() * 5);
+
+            txtKm = txtKm + Math.round(Math.random() * 7);
+
+            $('#txt_co2').text((txtCo2).toString().replace('.', ','));
+
+            $('#txt_km').text((txtKm).toString().replace('.', ',').toLocaleString('en'));
+            
+
+        }, 3000);
+
+        window.setInterval(function () {
+            txtOcorrencias++;
+
+            $('#txt_ocorrencias').text(txtOcorrencias);
+        }, 5000);
+
+        window.setInterval(function ()
+        {
+            txtUsuarios++;
+
+            $('#txt_usuarios').text(txtUsuarios);
+        }, 7000);
+    </script>
+
+</body>
+
+</html>
