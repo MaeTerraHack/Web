@@ -1,0 +1,271 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Produtos Naturais e Orgânicos | Mãe Terra</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	
+	<style>
+		#map {
+			height: 100%;
+		}
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+  </head>
+
+  <body>
+	<div id="nav_box">
+		<div class="input-group">
+			<input type="text" id="searchfield" placeholder="RUA, CIDADE, ESTADO, CEP OU PRODUTO MÃE TERRA" class="form-control" autocomplete="off">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button" onclick="busca()">
+					<img alt="" src="icone.png" class="button-arrow">
+				</button>
+			</span>
+		</div>
+	</div>
+	
+	<div id="map"></div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+	
+    <script>
+      var neighborhoods = [
+				{lat: -23.5894562, lng: -46.6349101},
+				{lat: -23.5898262, lng: -46.6349242},
+				{lat: -23.5912015, lng: -46.6353939},
+				{lat: -23.5918688, lng: -46.6360068},
+				{lat: -23.5923438, lng: -46.6363092},
+				{lat: -23.5931083, lng: -46.6364171},
+				{lat: -23.5940933, lng: -46.6364319},
+				{lat: -23.5945364, lng: -46.6364386},
+				{lat: -23.5956467, lng: -46.6364125},
+				{lat: -23.5963878, lng: -46.6363856},
+				{lat: -23.5971535, lng: -46.6363756},
+				{lat: -23.5971535, lng: -46.6363756},
+				{lat: -23.5970238, lng: -46.6354549},
+				{lat: -23.5969919, lng: -46.6348407},
+				{lat: -23.5969304, lng: -46.6341078},
+				{lat: -23.5969193, lng: -46.6334339},
+				{lat: -23.5968733, lng: -46.6329464},
+				{lat: -23.5994676, lng: -46.6345627},
+				{lat: -23.5996568, lng: -46.6326785},
+				{lat: -23.5996654, lng: -46.6327408},
+				{lat: -23.5996913, lng: -46.6336501},
+				{lat: -23.5996538, lng: -46.6356044},
+				{lat: -23.5994288, lng: -46.6379351},
+				{lat: -23.5994939, lng: -46.6384461},
+				{lat: -23.5994939, lng: -46.6385588}, 
+				{lat: -23.5994086, lng: -46.6388596},
+				{lat: -23.598662, lng: -46.6381944 },
+				{lat: -23.5986067, lng: -46.6379209},
+				{lat: -23.5985416, lng: -46.6371511},
+				{lat: -23.5989582, lng: -46.6370867},
+				{lat: -23.5994541, lng: -46.6370444},
+				{lat: -23.5982116, lng: -46.6398199},
+				{lat: -23.5975179, lng: -46.640135 },
+				{lat: -23.5977483, lng: -46.6398279},
+				{lat: -23.5975179, lng: -46.6401350},
+				{lat: -23.5974761, lng: -46.6395946},
+				{lat: -23.5974699, lng: -46.6389713},
+				{lat: -23.5976604, lng: -46.6390022},
+				{lat: -23.5978878, lng: -46.6390076},
+				{lat: -23.5984199, lng: -46.6390049},
+				{lat: -23.6038327, lng: -46.6480435},
+				{lat: -23.6038327, lng: -46.6502322},
+				{lat: -23.6038966, lng: -46.6491915},
+				{lat: -23.6039064, lng: -46.6455383},
+				{lat: -23.6039064, lng: -46.6466326},
+				{lat: -23.603931, lng: -46.6451869 },
+				{lat: -23.6039752, lng: -46.6436071},
+				{lat: -23.6039752, lng: -46.6441543},
+				{lat: -23.603926, lng: -46.6426603 },
+				{lat: -23.603926, lng: -46.6432075 },
+				{lat: -23.603953, lng: -46.6418047 },
+				{lat: -23.6038744, lng: -46.640705 },
+				{lat: -23.6038719, lng: -46.6390286},
+				{lat: -23.6040784, lng: -46.6379718},
+				{lat: -23.6040784, lng: -46.638519 },
+				{lat: -23.6040784, lng: -46.6390662},
+				{lat: -23.6040317, lng: -46.6377412},
+				{lat: -23.6040415, lng: -46.6376084},
+				{lat: -23.6040243, lng: -46.6369365},
+				{lat: -23.6040243, lng: -46.6374837},
+				{lat: -23.6039911, lng: -46.6360044},
+				{lat: -23.6039911, lng: -46.6365516},
+				{lat: -23.6039911, lng: -46.6370988},
+				{lat: -23.6040525, lng: -46.635881 },
+				{lat: -23.6040452, lng: -46.6350938},
+				{lat: -23.5960855, lng: -46.6407908},
+				{lat: -23.5960855, lng: -46.6429795},
+				{lat: -23.5957168, lng: -46.6449885},
+				{lat: -23.595616, lng: -46.645769  },
+				{lat: -23.5954452, lng: -46.646799 },
+				{lat: -23.5953801, lng: -46.6475312},
+				{lat: -23.5953174, lng: -46.6484392},
+				{lat: -23.5952252, lng: -46.6492358},
+				{lat: -23.5952055, lng: -46.6497427},
+				{lat: -23.5951281, lng: -46.6503194},
+				{lat: -23.5955831, lng: -46.6449183},
+				{lat: -23.5957305, lng: -46.6442545},
+				{lat: -23.59591, lng: -46.6435182  },
+				{lat: -23.5959849, lng: -46.6427927},
+				{lat: -23.5959751, lng: -46.6422267},
+				{lat: -23.595937, lng: -46.6414757 },
+				{lat: -23.595937, lng: -46.6436644 },
+				{lat: -23.5964679, lng: -46.639169 },
+				{lat: -23.5963647, lng: -46.6390242},
+				{lat: -23.5975494, lng: -46.6383643},
+				{lat: -23.5989553, lng: -46.6374953},
+				{lat: -23.6002088, lng: -46.6373505},
+				{lat: -23.601713, lng: -46.6372861 },
+				{lat: -23.6022488, lng: -46.6369401},
+				{lat: -23.6026888, lng: -46.6359235},
+				{lat: -23.6026888, lng: -46.6364707},
+				{lat: -23.6026495, lng: -46.6341452},
+				{lat: -23.6026495, lng: -46.6346924},
+				{lat: -23.6026716, lng: -46.6336275},
+				{lat: -23.6040562, lng: -46.6340008},
+				{lat: -23.6040611, lng: -46.6344702},
+				{lat: -23.6043094, lng: -46.634493 },
+				{lat: -23.6048894, lng: -46.6344367},
+				{lat: -23.6052581, lng: -46.6344273},
+				{lat: -23.605682, lng: -46.6343803 },
+				{lat: -23.605682, lng: -46.6349275 },
+				{lat: -23.605682, lng: -46.6354747 },
+				{lat: -23.6063063, lng: -46.6355364},
+				{lat: -23.6063063, lng: -46.6360836},
+				{lat: -23.6070289, lng: -46.6359951},
+				{lat: -23.6070289, lng: -46.6365423},
+				{lat: -23.6074516, lng: -46.6364162},
+				{lat: -23.6080366, lng: -46.636266 },
+				{lat: -23.6080366, lng: -46.636266 },
+				{lat: -23.6080366, lng: -46.636266 },
+				{lat: -23.5765847, lng: -46.6420022},
+				{lat: -23.5762308, lng: -46.6417232},
+				{lat: -23.5772141, lng: -46.6414282},
+				{lat: -23.5771748, lng: -46.6421792},
+				{lat: -23.5783007, lng: -46.6413155},
+				{lat: -23.5785883, lng: -46.640763 },
+				{lat: -23.5791217, lng: -46.6402963},
+				{lat: -23.5791217, lng: -46.6408435},
+				{lat: -23.5801984, lng: -46.640071 },
+				{lat: -23.5810072, lng: -46.6394675},
+				{lat: -23.5817373, lng: -46.6390142},
+				{lat: -23.5824256, lng: -46.6383678},
+				{lat: -23.5832736, lng: -46.6378823},
+				{lat: -23.5839398, lng: -46.6373915},
+				{lat: -23.5847633, lng: -46.6370589},
+				{lat: -23.5856654, lng: -46.6362113},
+				{lat: -23.5864299, lng: -46.635868 },
+				{lat: -23.5872313, lng: -46.6355193},
+				{lat: -23.5880719, lng: -46.6351062},
+				{lat: -23.5891683, lng: -46.6348782},
+				{lat: -23.5894141, lng: -46.6351558},
+				{lat: -23.5899831, lng: -46.6352296},
+				{lat: -23.5904637, lng: -46.635251 },
+				{lat: -23.5911593, lng: -46.635758 },
+				{lat: -23.5913731, lng: -46.6364634},
+				{lat: -23.5914874, lng: -46.6365331},
+				{lat: -23.5920171, lng: -46.6367799},
+				{lat: -23.5923846, lng: -46.6371742},
+				{lat: -23.5927127, lng: -46.6374907},
+				{lat: -23.5930679, lng: -46.6380566},
+				{lat: -23.5931767, lng: -46.6381109},
+				{lat: -23.5932799, lng: -46.6385602},
+				{lat: -23.5933783, lng: -46.6387768},
+				{lat: -23.5934545, lng: -46.6392415},
+				{lat: -23.5935233, lng: -46.6396713},
+				{lat: -23.5936382, lng: -46.6402821},
+				{lat: -23.593742, lng: -46.6408139 },
+				{lat: -23.593742, lng: -46.6413611 },
+				{lat: -23.5938329, lng: -46.6420652},
+				{lat: -23.5939681, lng: -46.6429517},
+				{lat: -23.5939681, lng: -46.6437805},
+				{lat: -23.5939681, lng: -46.6443277},
+				{lat: -23.5935158, lng: -46.6465915},
+				{lat: -23.5935158, lng: -46.6471387}
+			];
+
+      var markers = [];
+      var map;
+
+      function initMap() 
+	  {
+		map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: {lat: -23.598505, lng: -46.638403}
+        });
+		
+		clearMarkers();
+		
+		for (var i = 0; i < neighborhoods.length; i++) 
+		{
+			addMarkerWithTimeout(neighborhoods[i], i * 200);
+		}
+      }
+
+	  var iconBase = "MaeTerraIcon.png";
+	  
+      function addMarkerWithTimeout(position, timeout) 
+	  {
+		markers.push(getMarker(position));
+      }
+
+	  function getMarker(position)
+	  {
+        var contentString = '<div id="content">'+
+            '<div class="col-md-3"><img src="carrefour_logo.png" style="width: 100% !important;" /></div><div class="col-md-9"><h3 id="firstHeading" class="firstHeading">Carrefour Pinheiros</h3>'+
+            '<div id="bodyContent">'+
+            '<p>Avenida das Nações Unidas, 15.187<br>box 1 - Chácara Santo Antonio,<br>São Paulo - 05477-000, BR</p>'+
+            '</div></div></div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+		
+		var marker = new google.maps.Marker({
+            position: position,
+			icon: iconBase,
+            map: map,
+            animation: google.maps.Animation.DROP
+          });
+		  
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+		
+		return marker;
+	  }
+	  
+	  function busca()
+	  {
+		map.panTo({lat: -23.599651, lng: -46.632853});
+		map.setZoom(20);
+	  }
+	  
+      function clearMarkers() {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(null);
+        }
+        markers = [];
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgEWwknjsWSkhxkU4UqepZu29rfpN1aAU&callback=initMap"></script>
+  </body>
+</html>	
